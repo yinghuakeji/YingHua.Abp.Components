@@ -6,6 +6,8 @@
     <TargetFramework>net5.0</TargetFramework>
 	  <PackageId>YingHua.Abp.Components.WebAssembly.SyncfusionTheme</PackageId>
   </PropertyGroup>
+
+ 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Components.Web.BasicTheme" Version="4.3.0" />
     <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="4.3.0" />
@@ -15,5 +17,6 @@
  
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="新文件夹\" />
   </ItemGroup>
 </Project>
