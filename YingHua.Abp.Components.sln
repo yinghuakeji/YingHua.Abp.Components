@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YingHua.Abp.Components.Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YingHua.Abp.Components.Web.BasicTheme", "src\YingHua.Abp.Components.Web.BasicTheme\YingHua.Abp.Components.Web.BasicTheme.csproj", "{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YingHua.Abp.SyncfusionUI", "src\YingHua.Abp.SyncfusionUI\YingHua.Abp.SyncfusionUI.csproj", "{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
