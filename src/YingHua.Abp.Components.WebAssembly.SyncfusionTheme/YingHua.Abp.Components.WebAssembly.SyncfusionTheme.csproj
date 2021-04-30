@@ -8,12 +8,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Components.Web.BasicTheme" Version="4.3.0" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="4.3.0" />
     <PackageReference Include="Volo.Abp.Http.Client.IdentityModel.WebAssembly" Version="4.3.0" />
   </ItemGroup>
 
+
  
   <ItemGroup>
-    <Folder Include="Pages\" />
+    <ProjectReference Include="..\YingHua.Abp.Components.WebAssembly.Theming\YingHua.Abp.Components.WebAssembly.Theming.csproj" />
   </ItemGroup>
 </Project>

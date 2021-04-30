@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<Import Project="..\..\configureawait.props" />
+	<Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <ProjectReference Include="..\YingHua.Abp.Components.Web.Theming\YingHua.Abp.Components.Web.Theming.csproj" />
+  </ItemGroup>
+
+</Project>
