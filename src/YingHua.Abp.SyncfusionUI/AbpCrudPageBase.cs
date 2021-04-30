@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
- using JetBrains.Annotations;
+using JetBrains.Annotations;
 using Localization.Resources.AbpUi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
+using Syncfusion.Blazor.Grids;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.AspNetCore.Components;
@@ -187,8 +188,8 @@ namespace YingHua.Abp.SyncfusionUI
         protected TUpdateViewModel EditingEntity;
         protected Modal CreateModal;
         protected Modal EditModal;
-        protected Validations CreateValidationsRef;
-        protected Validations EditValidationsRef;
+       // protected Validations CreateValidationsRef;
+        //protected Validations EditValidationsRef;
         protected List<BreadcrumbItem> BreadcrumbItems = new List<BreadcrumbItem>(2);
         protected DataGridEntityActionsColumn<TListViewModel> EntityActionsColumn;
         protected EntityActionDictionary EntityActions { get; set; }
@@ -301,43 +302,43 @@ namespace YingHua.Abp.SyncfusionUI
 
             await InvokeAsync(StateHasChanged);
         }
-
-        protected virtual async Task OnDataGridReadAsync(DataGridReadDataEventArgs<TListViewModel> e)
-        {
-            CurrentSorting = e.Columns
-                .Where(c => c.Direction != SortDirection.None)
-                .Select(c => c.Field + (c.Direction == SortDirection.Descending ? " DESC" : ""))
-                .JoinAsString(",");
-            CurrentPage = e.Page;
-
-            await GetEntitiesAsync();
-
-            await InvokeAsync(StateHasChanged);
-        }
-
-        protected virtual async Task OpenCreateModalAsync()
-        {
-            try
-            {
-                CreateValidationsRef?.ClearAll();
-
-                await CheckCreatePolicyAsync();
-
-                NewEntity = new TCreateViewModel();
-
-                // Mapper will not notify Blazor that binded values are changed
-                // so we need to notify it manually by calling StateHasChanged
-                await InvokeAsync(() =>
-                {
-                    StateHasChanged();
-                    CreateModal?.Show();
-                });
-            }
-            catch (Exception ex)
-            {
-                await HandleErrorAsync(ex);
-            }
-        }
+        //
+        // protected virtual async Task OnDataGridReadAsync(DataGridReadDataEventArgs<TListViewModel> e)
+        // {
+        //     CurrentSorting = e.Columns
+        //         .Where(c => c.Direction != SortDirection.Ascending)
+        //         .Select(c => c.Field + (c.Direction == SortDirection.Descending ? " DESC" : ""))
+        //         .JoinAsString(",");
+        //     CurrentPage = e.Page;
+        //
+        //     await GetEntitiesAsync();
+        //
+        //     await InvokeAsync(StateHasChanged);
+        // }
+        //
+        // protected virtual async Task OpenCreateModalAsync()
+        // {
+        //     try
+        //     {
+        //         CreateValidationsRef?.ClearAll();
+        //
+        //         await CheckCreatePolicyAsync();
+        //
+        //         NewEntity = new TCreateViewModel();
+        //
+        //         // Mapper will not notify Blazor that binded values are changed
+        //         // so we need to notify it manually by calling StateHasChanged
+        //         await InvokeAsync(() =>
+        //         {
+        //             StateHasChanged();
+        //             CreateModal?.Show();
+        //         });
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         await HandleErrorAsync(ex);
+        //     }
+        // }
 
         protected virtual Task CloseCreateModalAsync()
         {
@@ -350,30 +351,30 @@ namespace YingHua.Abp.SyncfusionUI
             eventArgs.Cancel = eventArgs.CloseReason == CloseReason.FocusLostClosing;
         }
 
-        protected virtual async Task OpenEditModalAsync(TListViewModel entity)
-        {
-            try
-            {
-                EditValidationsRef?.ClearAll();
-
-                await CheckUpdatePolicyAsync();
-
-                var entityDto = await AppService.GetAsync(entity.Id);
-
-                EditingEntityId = entity.Id;
-                EditingEntity = MapToEditingEntity(entityDto);
-
-                await InvokeAsync(() =>
-                {
-                    StateHasChanged();
-                    EditModal?.Show();
-                });
-            }
-            catch (Exception ex)
-            {
-                await HandleErrorAsync(ex);
-            }
-        }
+        // protected virtual async Task OpenEditModalAsync(TListViewModel entity)
+        // {
+        //     try
+        //     {
+        //         EditValidationsRef?.ClearAll();
+        //
+        //         await CheckUpdatePolicyAsync();
+        //
+        //         var entityDto = await AppService.GetAsync(entity.Id);
+        //
+        //         EditingEntityId = entity.Id;
+        //         EditingEntity = MapToEditingEntity(entityDto);
+        //
+        //         await InvokeAsync(() =>
+        //         {
+        //             StateHasChanged();
+        //             EditModal?.Show();
+        //         });
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         await HandleErrorAsync(ex);
+        //     }
+        // }
 
         protected virtual TUpdateViewModel MapToEditingEntity(TGetOutputDto entityDto)
         {
@@ -411,27 +412,27 @@ namespace YingHua.Abp.SyncfusionUI
             // cancel close if clicked outside of modal area
             eventArgs.Cancel = eventArgs.CloseReason == CloseReason.FocusLostClosing;
         }
-
-        protected virtual async Task CreateEntityAsync()
-        {
-            try
-            {
-                if (CreateValidationsRef?.ValidateAll() ?? true)
-                {
-                    await OnCreatingEntityAsync();
-
-                    await CheckCreatePolicyAsync();
-                    var createInput = MapToCreateInput(NewEntity);
-                    await AppService.CreateAsync(createInput);
-
-                    await OnCreatedEntityAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                await HandleErrorAsync(ex);
-            }
-        }
+        //
+        // protected virtual async Task CreateEntityAsync()
+        // {
+        //     try
+        //     {
+        //         if (CreateValidationsRef?.ValidateAll() ?? true)
+        //         {
+        //             await OnCreatingEntityAsync();
+        //
+        //             await CheckCreatePolicyAsync();
+        //             var createInput = MapToCreateInput(NewEntity);
+        //             await AppService.CreateAsync(createInput);
+        //
+        //             await OnCreatedEntityAsync();
+        //         }
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         await HandleErrorAsync(ex);
+        //     }
+        // }
 
         protected virtual Task OnCreatingEntityAsync()
         {
@@ -445,26 +446,26 @@ namespace YingHua.Abp.SyncfusionUI
             await InvokeAsync(CreateModal.Hide);
         }
 
-        protected virtual async Task UpdateEntityAsync()
-        {
-            try
-            {
-                if (EditValidationsRef?.ValidateAll() ?? true)
-                {
-                    await OnUpdatingEntityAsync();
-
-                    await CheckUpdatePolicyAsync();
-                    var updateInput = MapToUpdateInput(EditingEntity);
-                    await AppService.UpdateAsync(EditingEntityId, updateInput);
-
-                    await OnUpdatedEntityAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                await HandleErrorAsync(ex);
-            }
-        }
+        // protected virtual async Task UpdateEntityAsync()
+        // {
+        //     try
+        //     {
+        //         if (EditValidationsRef?.ValidateAll() ?? true)
+        //         {
+        //             await OnUpdatingEntityAsync();
+        //
+        //             await CheckUpdatePolicyAsync();
+        //             var updateInput = MapToUpdateInput(EditingEntity);
+        //             await AppService.UpdateAsync(EditingEntityId, updateInput);
+        //
+        //             await OnUpdatedEntityAsync();
+        //         }
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         await HandleErrorAsync(ex);
+        //     }
+        // }
 
         protected virtual Task OnUpdatingEntityAsync()
         {

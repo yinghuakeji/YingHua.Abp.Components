@@ -4,6 +4,25 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Components\ObjectExtending\CheckExtensionProperty.razor.cs" />
+    <Compile Remove="Components\ObjectExtending\DateTimeExtensionProperty.razor.cs" />
+    <Compile Remove="Components\ObjectExtending\ExtensionProperties.razor.cs" />
+    <Compile Remove="Components\ObjectExtending\LookupExtensionProperty.razor.cs" />
+    <Compile Remove="Components\ObjectExtending\SelectExtensionProperty.razor.cs" />
+    <Compile Remove="Components\ObjectExtending\TextExtensionProperty.razor.cs" />
+    <Compile Remove="Components\ObjectExtending\TimeExtensionProperty.razor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Components\ObjectExtending\CheckExtensionProperty.razor" />
+    <Content Remove="Components\ObjectExtending\DateTimeExtensionProperty.razor" />
+    <Content Remove="Components\ObjectExtending\ExtensionProperties.razor" />
+    <Content Remove="Components\ObjectExtending\LookupExtensionProperty.razor" />
+    <Content Remove="Components\ObjectExtending\SelectExtensionProperty.razor" />
+    <Content Remove="Components\ObjectExtending\TextExtensionProperty.razor" />
+    <Content Remove="Components\ObjectExtending\TimeExtensionProperty.razor" />
+  </ItemGroup>
+ 
 
 	<ItemGroup>
 		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web" Version="4.3.0" />
