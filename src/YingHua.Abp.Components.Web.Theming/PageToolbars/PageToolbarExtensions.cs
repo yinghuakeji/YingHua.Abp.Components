@@ -1,8 +1,6 @@
-﻿using Blazorise;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Volo.Abp.BlazoriseUI.Components;
 using Volo.Abp.Localization;
 
 namespace YingHua.Abp.Compnents.Web.Theming.PageToolbars
@@ -47,23 +45,23 @@ namespace YingHua.Abp.Compnents.Web.Theming.PageToolbars
             string text,
             Func<Task> clicked,
             object icon = null,
-            Color color = Color.Primary,
+            //Color color = Color.Primary,
             bool disabled = false,
             int order = 0,
             string requiredPolicyName = null)
         {
-            toolbar.AddComponent<ToolbarButton>(
-                new Dictionary<string, object>
-                {
-                    { nameof(ToolbarButton.Color), color},
-                    { nameof(ToolbarButton.Text), text},
-                    { nameof(ToolbarButton.Disabled), disabled},
-                    { nameof(ToolbarButton.Icon), icon},
-                    { nameof(ToolbarButton.Clicked),clicked},
-                },
-                order,
-                requiredPolicyName
-            );
+            // toolbar.AddComponent<ToolbarButton>(
+            //     new Dictionary<string, object>
+            //     {
+            //         { nameof(ToolbarButton.Color), color},
+            //         { nameof(ToolbarButton.Text), text},
+            //         { nameof(ToolbarButton.Disabled), disabled},
+            //         { nameof(ToolbarButton.Icon), icon},
+            //         { nameof(ToolbarButton.Clicked),clicked},
+            //     },
+            //     order,
+            //     requiredPolicyName
+            // );
 
             return toolbar;
         }

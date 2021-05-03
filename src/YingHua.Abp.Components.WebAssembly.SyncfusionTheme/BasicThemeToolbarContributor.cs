@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Volo.Abp.AspNetCore.Components.Web.BasicTheme.Themes.Basic;
-using Volo.Abp.AspNetCore.Components.Web.Theming.Toolbars;
+using YingHua.Abp.Compnents.Web.Theming.Toolbars;
 using YingHua.Abp.Components.WebAssembly.SyncfusionTheme.Themes.Basic;
 
 namespace YingHua.Abp.Components.WebAssembly.SyncfusionTheme

@@ -12,7 +12,7 @@ namespace YingHua.Abp.SyncfusionUI
         typeof(AbpDddApplicationContractsModule),
         typeof(AbpAuthorizationModule)
         )]
-    public class AbpBlazoriseUIModule : AbpModule
+    public class SyncfusionUIModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

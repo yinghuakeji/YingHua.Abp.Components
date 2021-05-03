@@ -7,8 +7,6 @@ namespace YingHua.Abp.Components.WebAssembly.Theming
         public void AddScripts(BundleContext context)
         {
             context.Add("_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js");
-            context.Add("_content/Blazorise/blazorise.js");
-            context.Add("_content/Blazorise.Bootstrap/blazorise.bootstrap.js");
             context.Add("_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/js/abp.js");
         }
 
@@ -22,11 +20,7 @@ namespace YingHua.Abp.Components.WebAssembly.Theming
             {
                 Source = "_content/YingHua.Abp.Components.WebAssembly.Theming/libs/fontawesome/css/all.css"
             });
-            
             context.Add("_content/YingHua.Abp.Components.WebAssembly.Theming/libs/flag-icon/css/flag-icon.css");
-            context.Add("_content/Blazorise/blazorise.css");
-            context.Add("_content/Blazorise.Bootstrap/blazorise.bootstrap.css");
-            context.Add("_content/Blazorise.Snackbar/blazorise.snackbar.css");
         }
     }
 }

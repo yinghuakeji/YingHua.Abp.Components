@@ -1,8 +1,8 @@
 ﻿using Volo.Abp.AspNetCore.Components.Web.BasicTheme;
-using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
-using Volo.Abp.AspNetCore.Components.Web.Theming.Toolbars;
 using Volo.Abp.Http.Client.IdentityModel.WebAssembly;
 using Volo.Abp.Modularity;
+using YingHua.Abp.Compnents.Web.Theming.Routing;
+using YingHua.Abp.Compnents.Web.Theming.Toolbars;
 using YingHua.Abp.Components.WebAssembly.Theming;
 
 namespace YingHua.Abp.Components.WebAssembly.SyncfusionTheme
