@@ -16,4 +16,9 @@
     <ProjectReference Include="..\YingHua.Abp.Components.Web.Theming\YingHua.Abp.Components.Web.Theming.csproj" />
   </ItemGroup>
 
+  
+  <ItemGroup>
+    <Folder Include="wwwroot\libs\" />
+  </ItemGroup>
+
 </Project>

@@ -6,7 +6,7 @@ using YingHua.Abp.SyncfusionUI;
 namespace  Volo.Abp.AspNetCore.Components.Web.Theming
 {
     [DependsOn(
-        typeof(SyncfusionUIModule),
+        typeof(SyncfusionModule),
         typeof(AbpUiNavigationModule)
 
         )]

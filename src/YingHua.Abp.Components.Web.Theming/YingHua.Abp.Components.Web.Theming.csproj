@@ -3,16 +3,13 @@
 	<Import Project="..\..\common.props" />
 
 	<PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Volo.Abp.UI.Navigation" Version="4.3.0" />
-			<PackageReference Include="Volo.Abp.AspNetCore.Components.Web" Version="4.3.0" />
-		<PackageReference Include="Volo.Abp.Authorization" Version="4.3.0" />
-		
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YingHua.Abp.SyncfusionUI\YingHua.Abp.SyncfusionUI.csproj" />
-  </ItemGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.UI.Navigation" Version="4.3.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\YingHua.Abp.SyncfusionUI\YingHua.Abp.SyncfusionUI.csproj" />
+	</ItemGroup>
 
 </Project>

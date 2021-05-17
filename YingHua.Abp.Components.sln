@@ -5,15 +5,13 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.WebAssembly.SyncfusionTheme", "src\YingHua.Abp.Components.WebAssembly.SyncfusionTheme\YingHua.Abp.Components.WebAssembly.SyncfusionTheme.csproj", "{359BEE6D-484D-4F14-B8B5-F6A02467B893}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.WebAssembly.Theming", "src\YingHua.Abp.Components.WebAssembly.Theming\YingHua.Abp.Components.WebAssembly.Theming.csproj", "{BA8511C5-6748-408A-B162-90A6E00093A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.Web.BasicTheme", "src\YingHua.Abp.Components.Web.BasicTheme\YingHua.Abp.Components.Web.BasicTheme.csproj", "{076A0FEF-8CA0-43D9-B8A1-9C3EE1151BA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.Web.Theming", "src\YingHua.Abp.Components.Web.Theming\YingHua.Abp.Components.Web.Theming.csproj", "{8DF68CF4-AE48-4975-9777-64043502CBB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.Web.Theming", "src\YingHua.Abp.Components.Web.Theming\YingHua.Abp.Components.Web.Theming.csproj", "{0ACA2AAC-11B5-4FC6-936C-FF29A0FFEA65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.Web.BasicTheme", "src\YingHua.Abp.Components.Web.BasicTheme\YingHua.Abp.Components.Web.BasicTheme.csproj", "{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.Components.WebAssembly.Theming", "src\YingHua.Abp.Components.WebAssembly.Theming\YingHua.Abp.Components.WebAssembly.Theming.csproj", "{9B896DED-9EBA-4EAE-B397-E4251725D445}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.SyncfusionUI", "src\YingHua.Abp.SyncfusionUI\YingHua.Abp.SyncfusionUI.csproj", "{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YingHua.Abp.SyncfusionUI.Tests", "test\YingHua.Abp.SyncfusionUI.Tests\YingHua.Abp.SyncfusionUI.Tests.csproj", "{FC5136E4-72A9-4093-B44A-C4ED2AEB5C39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YingHua.Abp.SyncfusionUI", "src\YingHua.Abp.SyncfusionUI\YingHua.Abp.SyncfusionUI.csproj", "{63822847-3A7F-466E-84C1-BF9F12106F59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,26 +23,22 @@ Global
 		{359BEE6D-484D-4F14-B8B5-F6A02467B893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{359BEE6D-484D-4F14-B8B5-F6A02467B893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{359BEE6D-484D-4F14-B8B5-F6A02467B893}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA8511C5-6748-408A-B162-90A6E00093A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA8511C5-6748-408A-B162-90A6E00093A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA8511C5-6748-408A-B162-90A6E00093A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA8511C5-6748-408A-B162-90A6E00093A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DF68CF4-AE48-4975-9777-64043502CBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DF68CF4-AE48-4975-9777-64043502CBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DF68CF4-AE48-4975-9777-64043502CBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DF68CF4-AE48-4975-9777-64043502CBB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBD5EA1D-A274-4D26-A7B7-BB8185DB405F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45CF21D0-5B70-49AA-8EEB-7915BBC7BE56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC5136E4-72A9-4093-B44A-C4ED2AEB5C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC5136E4-72A9-4093-B44A-C4ED2AEB5C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC5136E4-72A9-4093-B44A-C4ED2AEB5C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC5136E4-72A9-4093-B44A-C4ED2AEB5C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076A0FEF-8CA0-43D9-B8A1-9C3EE1151BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076A0FEF-8CA0-43D9-B8A1-9C3EE1151BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076A0FEF-8CA0-43D9-B8A1-9C3EE1151BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076A0FEF-8CA0-43D9-B8A1-9C3EE1151BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACA2AAC-11B5-4FC6-936C-FF29A0FFEA65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACA2AAC-11B5-4FC6-936C-FF29A0FFEA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACA2AAC-11B5-4FC6-936C-FF29A0FFEA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACA2AAC-11B5-4FC6-936C-FF29A0FFEA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B896DED-9EBA-4EAE-B397-E4251725D445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B896DED-9EBA-4EAE-B397-E4251725D445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B896DED-9EBA-4EAE-B397-E4251725D445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B896DED-9EBA-4EAE-B397-E4251725D445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63822847-3A7F-466E-84C1-BF9F12106F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63822847-3A7F-466E-84C1-BF9F12106F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63822847-3A7F-466E-84C1-BF9F12106F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63822847-3A7F-466E-84C1-BF9F12106F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
