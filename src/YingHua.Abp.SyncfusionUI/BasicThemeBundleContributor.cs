@@ -11,7 +11,7 @@ namespace YingHua.Abp.SyncfusionUI
 
         public void AddStyles(BundleContext context)
         {
-            context.Add("_content/Syncfusion.Blazor/styles/bootstrap4.css");
+            context.Add("_content/Syncfusion.Blazor.Themes/bootstrap4.css");
         }
     }
 }

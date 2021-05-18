@@ -21,7 +21,7 @@ namespace YingHua.Abp.Components.WebAssembly.Theming
             //     Source = "_content/YingHua.Abp.Components.WebAssembly.Theming/libs/fontawesome/css/all.css"
             // });
          //   context.Add("_content/YingHua.Abp.Components.WebAssembly.Theming/libs/flag-icon/css/flag-icon.css");
-            context.Add("_content/Syncfusion.Blazor.Themes/bootstrap4.css");
+         //   context.Add("_content/Syncfusion.Blazor.Themes/bootstrap4.css");
         }
     }
 }
