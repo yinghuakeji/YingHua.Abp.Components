@@ -25,4 +25,9 @@ namespace YingHua.Abp.SyncfusionUI
             context.Services.AddSingleton(typeof(AbpBlazorMessageLocalizerHelper<>));
         }
     }
+
+    public static class IconNames
+    {
+        public static  string Add { get; set; }
+    }
 }
