@@ -2,6 +2,7 @@
 @code {
     protected override void OnInitialized()
     {
+        System.Console.WriteLine("Ìø×ªµÇÂ¼");
         Navigation.NavigateTo($"authentication/login?returnUrl={Uri.EscapeDataString(Navigation.Uri)}");
     }
 }

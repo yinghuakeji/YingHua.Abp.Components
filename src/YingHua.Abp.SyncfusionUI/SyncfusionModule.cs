@@ -22,6 +22,7 @@ namespace YingHua.Abp.SyncfusionUI
         private void ConfigureSyncfusionBlazor(ServiceConfigurationContext context)
         {
             context.Services.AddSyncfusionBlazor();
+            context.Services.AddScoped<SampleService>();
             context.Services.AddSingleton(typeof(AbpBlazorMessageLocalizerHelper<>));
         }
     }

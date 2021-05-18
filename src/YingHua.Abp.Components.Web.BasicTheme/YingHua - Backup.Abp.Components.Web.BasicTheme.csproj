@@ -7,5 +7,8 @@
   <ItemGroup>
     <ProjectReference Include="..\YingHua.Abp.Components.Web.Theming\YingHua.Abp.Components.Web.Theming.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\libs\basic\新文件夹\" />
+  </ItemGroup>
 
 </Project>
