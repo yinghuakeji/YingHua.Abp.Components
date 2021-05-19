@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 	<Import Project="..\..\configureawait.props" />
 	<Import Project="..\..\common.props" />
 
@@ -18,10 +18,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YingHua.Abp.Components.Web.BasicTheme\YingHua.Abp.Components.Web.BasicTheme.csproj" />
     <ProjectReference Include="..\YingHua.Abp.Components.WebAssembly.Theming\YingHua.Abp.Components.WebAssembly.Theming.csproj" />
-    <ProjectReference Include="..\YingHua.Abp.SyncfusionUI\YingHua.Abp.SyncfusionUI.csproj" />
   </ItemGroup>
 </Project>

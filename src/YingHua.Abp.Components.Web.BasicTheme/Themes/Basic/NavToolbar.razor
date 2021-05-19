@@ -1,14 +1,5 @@
 ﻿@using Syncfusion.Blazor.Navigations
-
-<div class="navbar-nav">
-    <SfToolbar OverflowMode="@OverflowMode.Popup">
-        <ToolbarItems>
-            @foreach (var render in ToolbarItemRenders)
-            {
-            <ToolbarItem>
-                    @render
-            </ToolbarItem>
-            }
-        </ToolbarItems>
-    </SfToolbar>
-</div>
+@foreach (var render in ToolbarItemRenders)
+{
+    @render
+}

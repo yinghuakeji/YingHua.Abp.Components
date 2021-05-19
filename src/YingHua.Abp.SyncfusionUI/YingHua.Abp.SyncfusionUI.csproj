@@ -4,13 +4,22 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
- 
-
 	<ItemGroup>
-		<PackageReference Include="Syncfusion.Blazor.Core" Version="19.1.0.63" />
-		<PackageReference Include="Syncfusion.Blazor.Navigations" Version="19.1.0.63" />
-		<PackageReference Include="Syncfusion.Blazor.Popups" Version="19.1.0.63" />
-		<PackageReference Include="Syncfusion.Blazor.Buttons" Version="19.1.0.63" />
+		<PackageReference Include="Syncfusion.Blazor.BarcodeGenerator" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Cards" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Core" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Diagrams" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.DropDowns" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Navigations" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Grid" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Inputs" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Layouts" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Notifications" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Popups" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Buttons" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.Spinner" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="19.1.0.64" />
+		<PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="19.1.0.64" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web" Version="4.3.0" />
 		<PackageReference Include="Volo.Abp.Authorization" Version="4.3.0" />
 		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.3.0" />

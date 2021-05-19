@@ -14,6 +14,7 @@ namespace YingHua.Abp.Components.WebAssembly.SyncfusionTheme
         {
           //  context.Add("_content/YingHua.Abp.Components.WebAssembly.SyncfusionTheme/libs/abp/css/theme.css");
            // context.Add("_content/YingHua.Abp.Components.WebAssembly.SyncfusionTheme/libs/abp/css/theme.css");
+            context.Add("_content/YingHua.Abp.Components.WebAssembly.SyncfusionTheme/css/bootstrap/bootstrap.min.css");
             context.Add("_content/YingHua.Abp.Components.Web.BasicTheme/libs/basic/css/app.css");
             context.Add("_content/YingHua.Abp.Components.Web.BasicTheme/libs/basic/css/devices.css");
         }

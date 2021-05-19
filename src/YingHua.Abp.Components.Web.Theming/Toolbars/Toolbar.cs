@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
+using Syncfusion.Blazor.Navigations;
 using Volo.Abp;
 
 namespace YingHua.Abp.Compnents.Web.Theming.Toolbars

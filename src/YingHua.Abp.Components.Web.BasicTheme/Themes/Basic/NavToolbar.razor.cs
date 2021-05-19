@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Syncfusion.Blazor.Navigations;
 using YingHua.Abp.Compnents.Web.Theming.Toolbars;
 
 namespace YingHua.Abp.Components.Web.BasicTheme.Themes.Basic
 {
     public partial class NavToolbar
     {
+        private Toolbar toolbar;
+
         [Inject]
         private IToolbarManager ToolbarManager { get; set; }
 
@@ -14,7 +17,7 @@ namespace YingHua.Abp.Components.Web.BasicTheme.Themes.Basic
 
         protected override async Task OnInitializedAsync()
         {
-            var toolbar = await ToolbarManager.GetAsync(StandardToolbars.Main);
+            this.toolbar = await ToolbarManager.GetAsync(StandardToolbars.Main);
 
             ToolbarItemRenders.Clear();
 
