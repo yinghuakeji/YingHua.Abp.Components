@@ -15,15 +15,9 @@
 </AuthorizeView>
     <CascadingValue Value="@this">
         <SpinnerComponent @ref="spinnerRef"></SpinnerComponent>
-        <div class="sample-browser e-view sf-new" @onclick="OnAppClick">
-            @* <div class="sb-mobile-overlay sb-hide"></div> *@
+        <div class="sample-browser e-view" @onclick="OnAppClick">
             <HeaderComponent @ref="headerRef" OnToggleClick="@OnToggleClick"></HeaderComponent>
             <div class="sb-content e-view">
-                @* <div class="@searchContainer"> *@
-                @*     <div class="index-search-container"> *@
-                @*         <SearchComponent @ref="@searchRef"></SearchComponent> *@
-                @*     </div> *@
-                @* </div> *@
                 <LeftPaneComponent @ref="LeftPaneRef"></LeftPaneComponent>
                 <RightPaneComponent @ref="RightPaneRef">@Body</RightPaneComponent>
             </div>
@@ -32,7 +26,6 @@
     @code {
         [Inject]
         protected SyncfusionBlazorService SyncfusionService { get; set; }
-
         private bool isDeviceMode { get; set; }
         private bool isSearchIconClick { get; set; }
         private string searchContainer { get; set; }

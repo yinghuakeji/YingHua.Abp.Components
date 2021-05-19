@@ -1,11 +1,8 @@
 ﻿@using Syncfusion.Blazor.Navigations;
 @using YingHua.Abp.Components.Web.BasicTheme.Themes.Basic
 @using YingHua.Abp.SyncfusionUI
-
-
 @inject NavigationManager UriHelper;
 @inject SampleService SampleService;
-
 <CascadingValue Value="@this">
     <div class="@rootClass" id='right-pane'>
         <div class='sb-desktop-wrapper'>
@@ -13,10 +10,10 @@
             <BreadCrumbComponent @ref="BreadCrumbRef"></BreadCrumbComponent>
             @* 内容 *@
             <div id="sb-content" class='sb-content-section'>
-             @ChildContent
+                @ChildContent
             </div>
             @* 页脚 *@
-            <FooterComponent @ref="FooterRef"/>
+            <FooterComponent @ref="FooterRef" />
         </div>
     </div>
 </CascadingValue>
@@ -24,7 +21,7 @@
 @code {
     private int tabSelectedItem { get; set; }
     private string rootClass = "sb-right-pane e-view " + SampleUtils.RIGHT_PANE;
- 
+    private bool isLoading = false;
     [CascadingParameter]
     protected MainLayout Layout { get; set; }
 
@@ -38,7 +35,7 @@
     /// </summary>
     public BreadCrumbComponent BreadCrumbRef { get; set; }
 
-  
+
 
     /// <summary>
     /// Child content of RightPane component.
@@ -46,9 +43,9 @@
     [Parameter]
     public RenderFragment ChildContent { get; set; }
 
- 
 
- 
+
+
 
     /// <summary>
     /// Re-render the source code tab with first indexed tab item.
@@ -59,8 +56,8 @@
         StateHasChanged();
     }
 
- 
- 
+
+
 
     protected override void OnParametersSet()
     {
@@ -77,4 +74,5 @@
             this.rootClass = SampleUtils.AddClass(rootClass, SampleUtils.RIGHT_PANE_EXPAND);
         }
     }
+
 }

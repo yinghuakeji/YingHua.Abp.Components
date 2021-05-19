@@ -1,7 +1,14 @@
-﻿@if (Menu != null)
+﻿@using Syncfusion.Blazor.Navigations
+@using Volo.Abp.UI.Navigation
+@if (Menu != null)
 {
-    foreach (var menuItem in Menu.Items)
-    {
-        <FirstLevelNavMenuItem MenuItem="menuItem" />
-    }
+    <SfTreeView TValue="MenuItem" >
+        <TreeViewFieldsSettings TValue="MenuItem"
+                                NavigateUrl="Url"
+                                DataSource="@MenuItems"
+                                Id="Id"   IconCss="IconCss"
+                                Text="Name" 
+                                Child="Items" 
+                                Expanded="Expanded"></TreeViewFieldsSettings>
+    </SfTreeView>
 }
