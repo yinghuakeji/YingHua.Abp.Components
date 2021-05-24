@@ -1,6 +1,5 @@
 <Project>
   <PropertyGroup>
-
     <!-- All Microsoft packages -->
     <MicrosoftPackageVersion>5.0.*</MicrosoftPackageVersion>
 
@@ -24,6 +23,20 @@
 
     <!-- Mongo2Go https://www.nuget.org/packages/Mongo2Go -->
     <Mongo2GoPackageVersion>3.1.1</Mongo2GoPackageVersion>
-
+  </PropertyGroup>
+   <Import Project="build\Version.props" />
+  <PropertyGroup>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)bin\$(Configuration)</PackageOutputPath>
+    <Authors>yinghuakeji</Authors>
+    <Company>yinghuakeji</Company>
+    <LangVersion>latest</LangVersion>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Abp主题类</Description>
+    <Copyright>Copyright (c) 2020 yinghuakeji</Copyright>
+    <PackageProjectUrl>https://github.com/yinghuakeji/YingHua.Abp.Components</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/yinghuakeji/YingHua.Abp.Components</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>dotnet;nuget;msbuild</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 </Project>
