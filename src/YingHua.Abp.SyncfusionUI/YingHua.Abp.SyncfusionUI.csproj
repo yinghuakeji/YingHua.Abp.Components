@@ -20,8 +20,8 @@
 		<PackageReference Include="Syncfusion.Blazor.Spinner" Version="19.1.0.64" />
 		<PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="19.1.0.64" />
 		<PackageReference Include="Syncfusion.Blazor.TreeGrid" Version="19.1.0.64" />
-		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web" Version="4.3.0" />
-		<PackageReference Include="Volo.Abp.Authorization" Version="4.3.0" />
-		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.3.0" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Components.Web" Version="4.3.1" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="4.3.1" />
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="4.3.1" />
 	</ItemGroup>
 </Project>
