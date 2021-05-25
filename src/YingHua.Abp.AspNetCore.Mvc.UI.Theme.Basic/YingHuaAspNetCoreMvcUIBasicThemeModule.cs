@@ -17,13 +17,13 @@ namespace YingHua.Abp.AspNetCore.Mvc.UI.Theme.Basic
         typeof(AbpAspNetCoreMvcUiThemeSharedModule),
         typeof(AbpAspNetCoreMvcUiMultiTenancyModule)
         )]
-    public class AbpAspNetCoreMvcUiBasicThemeModule : AbpModule
+    public class YingHuaAspNetCoreMvcUiBasicThemeModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(AbpAspNetCoreMvcUiBasicThemeModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(YingHuaAspNetCoreMvcUiBasicThemeModule).Assembly);
             });
         }
 
@@ -41,7 +41,7 @@ namespace YingHua.Abp.AspNetCore.Mvc.UI.Theme.Basic
 
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<AbpAspNetCoreMvcUiBasicThemeModule>("YingHua.Abp.AspNetCore.Mvc.UI.Theme.Basic");
+                options.FileSets.AddEmbedded<YingHuaAspNetCoreMvcUiBasicThemeModule>("YingHua.Abp.AspNetCore.Mvc.UI.Theme.Basic");
             });
 
             Configure<AbpToolbarOptions>(options =>
