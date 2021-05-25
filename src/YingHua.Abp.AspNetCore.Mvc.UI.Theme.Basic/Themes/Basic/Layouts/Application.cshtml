@@ -12,7 +12,7 @@
 @inject IPageLayout PageLayout
 @{
     Layout = null;
-    var containerClass = ViewBag.FluidLayout == true ? "container-fluid" : "container"; //TODO: Better and type-safe options
+    var containerClass = ViewBag.FluidLayout == true ? "container-fluid maincontent" : "container maincontent"; //TODO: Better and type-safe options
 
     var pageTitle = ViewBag.Title == null ? BrandingProvider.AppName : ViewBag.Title; //TODO: Discard to get from Title
 
@@ -51,8 +51,7 @@
 </head>
 <body class="abp-application-layout bg-light @rtl">
     @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.First, StandardLayouts.Application)
-
-    @(await Component.InvokeAsync<MainNavbarViewComponent>())
+@(await Component.InvokeAsync<MainNavbarViewComponent>())
 
     <div class="@containerClass">
         @(await Component.InvokeAsync<PageAlertsViewComponent>())
@@ -65,7 +64,6 @@
         @RenderBody()
         @await Component.InvokeLayoutHookAsync(LayoutHooks.PageContent.Last, StandardLayouts.Application)
     </div>
-
     <abp-script-bundle name="@BasicThemeBundles.Scripts.Global" />
 
     <script src="~/Abp/ApplicationConfigurationScript"></script>
@@ -76,5 +74,6 @@
     @await RenderSectionAsync("scripts", false)
 
     @await Component.InvokeLayoutHookAsync(LayoutHooks.Body.Last, StandardLayouts.Application)
-</body>
+    <ejs-scripts></ejs-scripts>
+    </body>
 </html>

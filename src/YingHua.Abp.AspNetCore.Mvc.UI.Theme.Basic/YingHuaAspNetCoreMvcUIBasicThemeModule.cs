@@ -21,6 +21,7 @@ namespace YingHua.Abp.AspNetCore.Mvc.UI.Theme.Basic
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
+            
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
                 mvcBuilder.AddApplicationPartIfNotExists(typeof(YingHuaAspNetCoreMvcUiBasicThemeModule).Assembly);

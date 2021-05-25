@@ -7,6 +7,7 @@ namespace YingHua.Abp.AspNetCore.Mvc.UI.Theme.Basic.Bundling
         public override void ConfigureBundle(BundleConfigurationContext context)
         {
             context.Files.Add("/themes/basic/layout.css");
+            context.Files.Add("/themes/syncfusion/material.css");
         }
     }
 }
