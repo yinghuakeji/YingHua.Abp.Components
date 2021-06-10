@@ -1,0 +1,238 @@
+﻿@inherits LayoutComponentBase
+@using System.Reflection
+@using System.Globalization
+@using global::Localization.Resources.AbpUi
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.UI.Navigation
+@using Volo.Abp.Users
+@inject ICurrentUser user;
+@inject IJSRuntime JSRuntime;
+@inject NavigationManager NavigationManager;
+@inject IStringLocalizer<AbpUiResource> UiLocalizer
+<CascadingValue Value="this" IsFixed="true">
+    <Layout SideWidth="0" IsPage="true" ShowGotoTop="true" ShowCollapseBar="true"
+            IsFullSide="@IsFullSide" IsFixedHeader="@IsFixedHeader" IsFixedFooter="@IsFixedFooter" ShowFooter="@ShowFooter"
+            Menus="@Menus" UseTabSet="@UseTabSet" AdditionalAssemblies="new[] { GetType().Assembly }" class="color1">
+        <Header>
+            <span class="ml-3 flex-sm-fill d-none d-sm-block"></span>
+            <div class="header-right" style="width: 90px;">
+                <nav class="menu">
+                    <div class="navbar navbar-expand d-flex">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">
+                                    <span class="mx-1" style="">@SelectedCulture</span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-menu-arrow"></div>
+                                    <a @onclick="@(x=>SetCulture("zh"))" class="dropdown-item"><span class="nav-link-text">简体中文</span></a>
+                                    <a @onclick="@(x=>SetCulture("en"))" class="dropdown-item"><span class="nav-link-text">English</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="header-right">
+                <nav class="menu">
+                    <div class="navbar navbar-expand d-flex">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#">
+                                    @if (user != null)
+                                    {
+                                        @* <Avatar style="margin-top:3px;" GetUrlAsync="()=>wtmblazor.GetBase64Image(UserInfo.PhotoId.ToString(),150,150)" IsCircle="true" Size="Size.ExtraSmall" />*@
+                                        <span class="mx-1" style="">@user.Name</span>
+                                    }
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-menu-arrow"></div>
+                                    <a @onclick="@Show" class="dropdown-item"><i class="fa fa-user fa-fw"></i><span class="nav-link-text">@UiLocalizer["Login.ChangePassword"]</span></a><!--!--><!--!-->
+                                    <a target="_self" href="/" class="dropdown-item"><i class="fa fa-fa fa-fw"></i><span class="nav-link-text">@UiLocalizer["Sys.BackHome"]</span></a><!--!--><!--!-->
+                                    @if (IsDebug)
+                                    {
+                                        <a target="_blank" href="/_codegen?ui=blazor" class="dropdown-item"><i class="fa fa-cogs fa-fw"></i><span class="nav-link-text">@UiLocalizer["Sys.CodeGen"]</span></a>
+                                        <a target="_blank" href="/swagger" class="dropdown-item"><i class="fa fa-file-text fa-fw"></i><span class="nav-link-text">@UiLocalizer["Sys.ApiDoc"]</span></a>
+                                    }
+                                    <a @onclick="@DeleteToken" class="dropdown-item"><i class="fa fa-sign-out fa-fw"></i><span class="nav-link-text">@UiLocalizer["Login.LogOut"]</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="layout-drawer" @onclick="@(e => IsOpen = !IsOpen)"><i class="fa fa-gears"></i></div>
+        </Header>
+        <Side>
+            <div class="layout-banner">
+                <img class="layout-logo" src="/images/logo.png" style="width:30px;height:24px" />
+                <div class="layout-title">
+                    <span>WTM</span>
+                </div>
+            </div>
+        </Side>
+        <Main>
+            <CascadingValue Value="@user">
+                @Body
+            </CascadingValue>
+        </Main>
+    </Layout>
+
+    <Drawer Placement="Placement.Right" @bind-IsOpen="@IsOpen" IsBackdrop="true">
+        <div class="layout-drawer-body">
+            <div class="btn btn-info w-100" @onclick="@(e => IsOpen = false)">@UiLocalizer["Sys.Close"]</div>
+            <GroupBox Title="@UiLocalizer["Sys.Layout"]">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="layout-item @(IsFullSide ? "active d-flex" : "d-flex")" @onclick="@(e => IsFullSide = true)" data-toggle="tooltip" title="@UiLocalizer["Sys.LeftRight"]">
+                            <div class="layout-left d-flex flex-column">
+                                <div class="layout-left-header"></div>
+                                <div class="layout-left-body flex-fill"></div>
+                            </div>
+                            <div class="layout-right d-flex flex-column flex-fill">
+                                <div class="layout-right-header"></div>
+                                <div class="layout-right-body flex-fill"></div>
+                                <div class="layout-right-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="layout-item flex-column @(IsFullSide ? "d-flex" : "active d-flex")" @onclick="@(e => IsFullSide = false)" data-toggle="tooltip" title="@UiLocalizer["Sys.UpDown"]">
+                            <div class="layout-top">
+                            </div>
+                            <div class="layout-body d-flex flex-fill">
+                                <div class="layout-left">
+                                </div>
+                                <div class="layout-right flex-fill">
+                                </div>
+                            </div>
+                            <div class="layout-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </GroupBox>
+
+            <GroupBox Title="@UiLocalizer["Sys.MoreSettings"]">
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                        <Switch @bind-Value="@UseTabSet" OnColor="@Color.Success" OffColor="@Color.Primary"></Switch>
+                    </div>
+                    <div class="col-6 text-right">
+                        <span>@(UseTabSet ? @UiLocalizer["Sys.Tabs"] : @UiLocalizer["Sys.SinglePage"])</span>
+                    </div>
+                </div>
+            </GroupBox>
+        </div>
+    </Drawer>
+
+    <Toast />
+    <Dialog />
+    <PopoverConfirm />
+    <Message />
+    <SweetAlert />
+</CascadingValue>
+
+@code
+{
+
+    private bool UseTabSet { get; set; } = true;
+
+    private bool IsOpen { get; set; }
+
+    private bool IsFixedHeader { get; set; } = true;
+
+    private bool IsFixedFooter { get; set; } = true;
+
+    private bool IsFullSide { get; set; } = true;
+
+    private bool ShowFooter { get; set; } = false;
+    private bool IsDebug { get; set; } = false;
+    protected ApplicationMenu Menu { get; set; }
+    private List<BootstrapBlazor.Components.MenuItem> Menus { get; set; }
+    [Inject]
+    protected IMenuManager MenuManager { get; set; }
+    private string SelectedCulture
+    {
+        get
+        {
+            if (CultureInfo.CurrentUICulture.Name.Contains("zh"))
+            {
+                return "简体中文";
+            }
+            if (CultureInfo.CurrentUICulture.Name.Contains("en"))
+            {
+                return "English";
+            }
+            return CultureInfo.CurrentUICulture.Name;
+        }
+    }
+
+
+    public async Task DeleteToken()
+    {
+        await JSRuntime.InvokeAsync<string>("localStorageFuncs.remove", "wtmtoken");
+        await JSRuntime.InvokeAsync<string>("localStorageFuncs.remove", "wtmrefreshtoken");
+        await JSRuntime.InvokeAsync<string>("window.urlFuncs.refresh");
+    }
+
+
+    private async Task Show()
+    {
+        //  await wtmblazor.OpenDialog<Password>(UiLocalizer["Login.ChangePassword"], size: Size.Small);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+#if DEBUG
+        IsDebug = true;
+#else
+        IsDebug = false;
+
+#endif
+        var m = await MenuManager.GetAsync(StandardMenus.Main);
+        Menus = GetMenuFromFrameworkMenu(m.Items);
+        await base.OnInitializedAsync();
+    }
+
+
+    private List<BootstrapBlazor.Components.MenuItem> GetMenuFromFrameworkMenu(ApplicationMenuItemList input)
+    {
+        List<BootstrapBlazor.Components.MenuItem> rv = new List<BootstrapBlazor.Components.MenuItem>();
+        foreach (var item in input)
+        {
+            var m = new BootstrapBlazor.Components.MenuItem
+            {
+                Text = item.DisplayName,
+                // Text = UiLocalizer[item.PageName],
+                Icon = item.Icon,
+                Url = item.Url
+            };
+            if (item.Items?.Any() == true)
+            {
+
+                GetMenuFromFrameworkMenu(item.Items).ForEach(x => m.AddItem(x));
+            }
+            rv.Add(m);
+        }
+        return rv;
+    }
+
+    private async Task SetCulture(string Value)
+    {
+        var cultureName = Value;
+        if (cultureName != CultureInfo.CurrentUICulture.Name)
+        {
+            await JSRuntime.InvokeAsync<string>("localStorageFuncs.set", "wtmculture", Value);
+            var culture = new CultureInfo(cultureName);
+            CultureInfo.CurrentCulture = culture;
+            CultureInfo.CurrentUICulture = culture;
+            var uri = new Uri(NavigationManager.Uri)
+                        .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+            var query = $"?culture={Uri.EscapeDataString(Value)}&" +
+                $"redirect={Uri.EscapeDataString(uri)}";
+            NavigationManager.NavigateTo("/_framework/SetLanguageForBlazor" + query, forceLoad: true);
+        }
+    }
+}
